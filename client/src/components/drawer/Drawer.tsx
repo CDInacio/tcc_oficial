@@ -1,25 +1,27 @@
-import { useState } from 'react'
+import { IoHomeOutline } from "react-icons/io5";
 
-const Drawer = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  return (
-    <div
-      className={`${
-        isOpen ? 'w-72' : 'w-20'
-      } bg-sky-800 text-white transition-all duration-300 overflow-hidden`}
-    >
-      <div className="p-4">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="bg-blue-500 p-2 rounded"
-        >
-          {isOpen ? 'Close Drawer' : 'Open Drawer'}
-        </button>
-      </div>
-      {isOpen && <div className="p-4">Drawer Content Here</div>}
-    </div>
-  )
+interface IDrawerItem {
+  name: string;
+  icon: JSX.Element;
+  path: string;
 }
 
-export default Drawer
+const DrawerItems: IDrawerItem[] = [
+  {
+    name: "Home",
+    icon: <IoHomeOutline />,
+    path: "/",
+  },
+];
+
+const Drawer = () => {
+  return (
+    <div
+      className={`w-60 bg-white border-l border-[1px] text-white h-screen transition-all duration-300 fixed z-50`}
+    >
+      <div className="p-4"></div>
+    </div>
+  );
+};
+
+export default Drawer;
