@@ -12,7 +12,7 @@ interface IDrawerItem {
 const drawerItems: IDrawerItem[] = [
   {
     name: "Home",
-    icon: <IoHomeOutline />,
+    icon: <IoHomeOutline className="w-6 h-6 lg:w-4 lg:h-4" />,
     path: "/",
   },
 ];
@@ -20,7 +20,7 @@ const drawerItems: IDrawerItem[] = [
 const Drawer = () => {
   return (
     <div
-      className={`w-60 bg-white border-l border-[1px]  h-screen transition-all duration-300 fixed z-50`}
+      className={`lg:w-60 w-20 bg-white border-l border-[1px]  h-screen transition-all duration-300 fixed z-50 overflow-hidden`}
     >
       <div className="p-4">
         <div>
@@ -29,19 +29,21 @@ const Drawer = () => {
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
 
-          <h2 className="text-center text-xl font-medium text-[#333333] mt-5">
+          <h2 className="hidden lg:flex justify-center text-xl font-medium text-[#333333] mt-5">
             Fulano de Tal
           </h2>
-          <p className="text-center text-[#9E9E9E]">Administrador</p>
+          <p className="hidden lg:flex  justify-center text-[#9E9E9E]">
+            Administrador
+          </p>
           <Separator className="my-5" />
           <div>
             {drawerItems.map((item: IDrawerItem, index: number) => (
               <div
                 key={index}
-                className="flex items-center space-x-2 p-2 cursor-pointer hover:bg-[#014C90] hover:text-white text-[#9E9E9E] rounded-md"
+                className="flex items-center space-x-2 p-2 cursor-pointer hover:bg-[#014C90] transition duration-300 hover:text-white text-[#9E9E9E] rounded-md"
               >
-                <span className=" ">{item.icon}</span>
-                <span className="">{item.name}</span>
+                <span className="mx-auto lg:mx-0">{item.icon}</span>
+                <span className="hidden lg:flex">{item.name}</span>
               </div>
             ))}
           </div>
