@@ -6,4 +6,8 @@ export const privateRoutes: IRoute[] = [
     path: "/",
     element: <Home />,
   },
+  {
+    path: "/",
+    element: <Home />,
+  },
 ];
