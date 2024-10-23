@@ -1,27 +1,28 @@
-import Navbar from './drawer/navbar/Navbar'
-import Drawer from './drawer/Drawer'
-import { Navigate, Outlet } from 'react-router-dom'
+// PrivateRoute.jsx
+import Navbar from "./drawer/navbar/Navbar";
+import Drawer from "./drawer/Drawer";
+import { Navigate, Outlet } from "react-router-dom";
 
 const PrivateRoute = () => {
-  // const user = localStorage.getItem('user')
-  // const token = localStorage.getItem('userToken')
-  const isAuth = false
+  const isAuth = true;
 
   return (
     <>
       {isAuth ? (
-        <>
+        <div className="w-screen min-h-screen flex">
           <header>
             <Navbar />
           </header>
           <Drawer />
-          <Outlet />
-        </>
+          <div className="flex-1 ml-60 pt-16 p-5 bg-background">
+            <Outlet />
+          </div>
+        </div>
       ) : (
         <Navigate to="/signin" />
       )}
     </>
-  )
-}
+  );
+};
 
-export default PrivateRoute
+export default PrivateRoute;
