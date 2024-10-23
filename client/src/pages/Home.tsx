@@ -1,5 +1,7 @@
-const Home = () => {
-  return <div>Home</div>
-}
+import { useState } from "react";
 
-export default Home
+const Home = () => {
+  return <div className="bg-red-400 mt-10">Home</div>;
+};
+
+export default Home;
