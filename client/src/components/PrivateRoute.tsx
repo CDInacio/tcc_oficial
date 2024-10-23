@@ -14,7 +14,7 @@ const PrivateRoute = () => {
             <Navbar />
           </header>
           <Drawer />
-          <div className="flex-1 ml-60 pt-16 p-5 bg-background">
+          <div className="flex-1 ml-20 lg:ml-60 pt-16 p-5 bg-background">
             <Outlet />
           </div>
         </div>
