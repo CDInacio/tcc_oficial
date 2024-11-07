@@ -1,10 +1,13 @@
 // PrivateRoute.jsx
-import Navbar from "./drawer/navbar/Navbar";
 import Drawer from "./drawer/Drawer";
 import { Navigate, Outlet } from "react-router-dom";
+import Navbar from "./navbar/Navbar";
 
 const PrivateRoute = () => {
-  const isAuth = true;
+  const user = localStorage.getItem("user");
+  const token = localStorage.getItem("token");
+
+  const isAuth = user && token;
 
   return (
     <>
@@ -19,7 +22,7 @@ const PrivateRoute = () => {
           </div>
         </div>
       ) : (
-        <Navigate to="/signin" />
+        <Navigate to="/login" />
       )}
     </>
   );
