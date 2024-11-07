@@ -47,9 +47,7 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -59,11 +57,11 @@ button:focus-visible {
   :root {
     background-color: #ffffff;
   }
-  a:hover {
+  button:hover {
+    outline: none;
+    box-shadow: none; /* Se a borda for uma sombra */
   }
-  button {
-    background-color: #f9f9f9;
-  }
+ 
 }
 
 @layer base {
@@ -75,8 +73,8 @@ button:focus-visible {
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 201 100% 36%;
+    --primary-foreground: 214 97% 27%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
